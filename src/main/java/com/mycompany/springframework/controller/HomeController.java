@@ -13,6 +13,7 @@ public class HomeController {
 		log.info("실행");
 		log.info("실행2");
 		log.info("행실");
+		log.info("실행3420");
 		return "home";
 	}
 }
