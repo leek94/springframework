@@ -12,6 +12,9 @@ public class HomeController {
 	public String index() {
 		log.info("실행");
 		log.info("난 몰라");
+		log.info("실행2");
+		log.info("실행3420");
 		return "home";
+		
 	}
 }
