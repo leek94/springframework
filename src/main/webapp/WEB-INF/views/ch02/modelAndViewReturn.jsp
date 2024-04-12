@@ -1,6 +1,4 @@
-<%-- page 지시자: WAS에서 JSP 해석하는 방법을 기술 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%--         실행 후 결과                                  문자 셋 --%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,6 +16,7 @@
 	
 </script>
 </head>
+
 <body>
 	<div class="d-flex flex-column vh-100">
 		<%-- include 지시자는 소스 복사 개념 --%>
@@ -26,13 +25,15 @@
 			<div class="d-flex row">
 				<div class="col-md-4">
 					<%@ include file="/WEB-INF/views/common/menu.jsp"%>
-					<%-- include 액션은 외부에서 실행하고 결과만 삽입 --%>
-					<!--<jsp:include page="/WEB-INF/views/common/menu.jsp"></jsp:include>-->
 				</div>
 				<div class="col-md-8">
 					<div class="card">
-						<div class="card-header">home</div>
-						<div class="card-body">content</div>
+						<div class="card-header">ModelAndView 타입 리턴</div>
+						<div class="card-body">
+							<p>chNum: ${chNum}</p>
+							<p>login: ${login}</p>
+							<p>userName: ${userName}</p>
+						</div>
 					</div>
 				</div>
 			</div>

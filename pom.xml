@@ -10,6 +10,23 @@
 	<!-- 프로젝트가 사용하는 외부 의존 라이브러리 -->
 	<dependencies>
 
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+		@ResponseBody에서 리턴된 객체를 JSON으로 변환할 때 필요한 라이브러리 -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.17.0</version>
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/org.json/json JSON -->
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20240303</version>
+		</dependency>
+
+
 		<!-- 서블링 4.0 라이브러리를 사용 -->
 		<dependency>
 			<groupId>javax.servlet</groupId>

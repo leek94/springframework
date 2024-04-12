@@ -1,6 +1,4 @@
-<%-- page 지시자: WAS에서 JSP 해석하는 방법을 기술 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%--         실행 후 결과                                  문자 셋 --%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,9 +13,31 @@
 
 <!-- 사용자 정의 JavaScript -->
 <script type="text/javascript">
-	
+	function handleBtn1() {
+		console.log("handleBtn1() 실행");
+
+		$.ajax({
+			url : "objectReturnJson1",
+			method : "get",
+			success : function(data) {
+				console.log(data);
+			}
+		});
+	}
+	function handleBtn2() {
+		console.log("handleBtn2() 실행");
+
+		$.ajax({
+			url : "objectReturnJson2",
+			method : "get",
+			success : function(data) {
+				console.log(data);
+			}
+		});
+	}
 </script>
 </head>
+
 <body>
 	<div class="d-flex flex-column vh-100">
 		<%-- include 지시자는 소스 복사 개념 --%>
@@ -26,13 +46,14 @@
 			<div class="d-flex row">
 				<div class="col-md-4">
 					<%@ include file="/WEB-INF/views/common/menu.jsp"%>
-					<%-- include 액션은 외부에서 실행하고 결과만 삽입 --%>
-					<!--<jsp:include page="/WEB-INF/views/common/menu.jsp"></jsp:include>-->
 				</div>
 				<div class="col-md-8">
 					<div class="card">
-						<div class="card-header">home</div>
-						<div class="card-body">content</div>
+						<div class="card-header">Object 리턴</div>
+						<div class="card-body">
+							<button class="btn btn-success" onclick="handleBtn1()">파일 정보를 JSON으로 받기1</button>
+							<button class="btn btn-info" onclick="handleBtn2()">파일 정보를 JSON으로 받기2</button>
+						</div>
 					</div>
 				</div>
 			</div>
