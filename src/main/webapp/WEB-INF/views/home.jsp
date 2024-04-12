@@ -26,8 +26,8 @@
 			<div class="d-flex row">
 				<div class="col-md-4">
 					<%@ include file="/WEB-INF/views/common/menu.jsp"%>
-					<%-- include 액션은 외부에서 실행하고 결과만 삽입 --%>
-					<!--<jsp:include page="/WEB-INF/views/common/menu.jsp"></jsp:include>-->
+					<%-- include 액션은 외부에서 실행하고 결과만 삽입 
+					<jsp:include page="/WEB-INF/views/common/menu.jsp"></jsp:include>--%>
 				</div>
 				<div class="col-md-8">
 					<div class="card">

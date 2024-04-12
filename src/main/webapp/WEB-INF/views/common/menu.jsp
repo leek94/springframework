@@ -28,6 +28,8 @@
 					<li><a href="${pageContext.request.contextPath}/ch02/modelAndViewReturn?chNum=ch02">Model&View 리턴</a></li>
 					<li><a href="${pageContext.request.contextPath}/ch02/voidReturn?chNum=ch02">void 리턴</a></li>
 					<li><a href="${pageContext.request.contextPath}/ch02/objectReturn?chNum=ch02">Object 리턴</a></li>
+					<li><a href="${pageContext.request.contextPath}/ch02/testAuthInterceptor1?chNum=ch02">로그인X 내용</a></li>
+					<li><a href="${pageContext.request.contextPath}/ch02/testAuthInterceptor2?chNum=ch02">로그인O 내용</a></li>
 				</ul>
 			</div>
 		</div>
