@@ -10,8 +10,12 @@
 	<!-- 프로젝트가 사용하는 외부 의존 라이브러리 -->
 	<dependencies>
 
-
-
+		<!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.5</version>
+		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind 
 			@ResponseBody에서 리턴된 객체를 JSON으로 변환할 때 필요한 라이브러리 -->
