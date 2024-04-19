@@ -28,6 +28,11 @@
 			<param-name>contextConfigLocation</param-name>
 			<param-value>classpath:spring/dispatcher/*.xml</param-value>
 		</init-param>
+		
+		<init-param>
+	      <param-name>throwExceptionIfNoHandlerFound</param-name>
+	      <param-value>true</param-value>
+ 	   </init-param>
 		<load-on-startup>1</load-on-startup>
 		
 		<!-- multipart/form-data를 해석하기 위한 설정 -->
@@ -37,6 +42,10 @@
 			<max-request-size>104857600</max-request-size>
 			<file-size-threshold>1024</file-size-threshold>
 		</multipart-config> -->
+		
+		 <!-- 404일 경우 NoHandlerFoundExeption을 발생시키도록 함 -->
+    
+    
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>DispatcherServlet</servlet-name>
@@ -64,6 +73,8 @@
 		<filter-name>Ch02Filter</filter-name>
 		<url-pattern>/ch02/*</url-pattern>
 	</filter-mapping>
+	
+	
 
 
 </web-app>

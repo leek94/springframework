@@ -143,4 +143,39 @@
 			</div>
 		</div>
 	</div>
+	
+	<div class="accordion-item">
+		<h2 class="accordion-header">
+			<button class="accordion-button ${chNum=='ch010'?'':'collapsed'}" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="${chNum=='ch10'}"
+				aria-controls="collapseTen">Ch010. 예외 처리</button>
+		</h2>
+		<div id="collapseTen" class="accordion-collapse collapse ${chNum=='ch10'?'show':''}" data-bs-parent="#accordionExample">
+			<div class="accordion-body">
+				<ul>
+					<li><a href="${pageContext.request.contextPath}/ch10/handlingException1">try-catch 이용 </a></li>
+					<li><a href="${pageContext.request.contextPath}/ch10/handlingException2">@ExceptionHandler 사용</a></li>
+					<li><a href="${pageContext.request.contextPath}/ch10/handlingException3">사용자 정의 예외 사용</a></li>
+					<li><a href="${pageContext.request.contextPath}/ch10/handlingException4">기타 500 예외 처리</a></li>
+					<li><a href="${pageContext.request.contextPath}/ch10/aaaaaaaaaaaaaaaa">404 처리</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div class="accordion-item">
+		<h2 class="accordion-header">
+			<button class="accordion-button ${chNum=='ch011'?'':'collapsed'}" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-expanded="${chNum=='ch11'}"
+				aria-controls="collapseEleven">Ch011. 다국어 처리</button>
+		</h2>
+		<div id="collapseEleven" class="accordion-collapse collapse ${chNum=='ch11'?'show':''}" data-bs-parent="#accordionExample">
+			<div class="accordion-body">
+				<ul>
+					<li><a href="${pageContext.request.contextPath}/ch11/joinForm">다국어 처리</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	
+	
 </div>
