@@ -5,11 +5,11 @@
 	
 	<!-- 기본 생성자를 이용해서 관리 빈으로 생성 -->
 	<bean id="ch12Service1_1" 
-		class="com.mycompany.springframework.service.Ch12Service1"></bean>
+		class="com.mycompany.springframework.service.Ch12Service2"></bean>
 
 	<!-- 정적 메소드를 이용해서 관리 빈으로 생성 -->
 	<bean name="ch12Service2"
-		class="com.mycompany.springframework.service.Ch12Service2"
+		class="com.mycompany.springframework.service.Ch12Service3"
 		factory-method="getInstance"></bean>
 			
 	<!-- 인스턴스 메소드를 이용해서 관리 빈으로 생성 -->

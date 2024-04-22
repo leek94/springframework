@@ -39,7 +39,7 @@ diByXml<%@ page contentType="text/html; charset=UTF-8"%>
                   <div class="card">
                      <div class="card-header">XML 설정 관리빈 의존성 주입</div>
                      <div class="card-body">
-                        <p>spring/root/ch12_di_by_xml.xml 참조</p>
+                        <p>spring/root/ch12_create_bean_xml.xml 참조</p>
                      </div>
                   </div>
                   <!-- ###################################### -->

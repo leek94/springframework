@@ -15,4 +15,5 @@ public class Ch12Service4 {
 		log.info("실행");
 	}
 	
+	//@Service가 붙으면 root 쪽 컨테이너에 생성됨 -> component xml에 include, exclude 되어 있음
 }

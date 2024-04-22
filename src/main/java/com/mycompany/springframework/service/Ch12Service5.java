@@ -15,6 +15,7 @@ public class Ch12Service5 {
 		log.info("실행");
 		this.ch12Dao1 = ch12Dao1;
 	}
+	
 	public void setCh12Dao2(Ch12Dao2 ch12Dao2) {
 		log.info("실행");
 		this.ch12Dao2 = ch12Dao2;

@@ -200,7 +200,9 @@
          <div class="accordion-body">
          <ul>
             <li><a href="${pageContext.request.contextPath}/ch12/createBeanByXml">XML 설정으로 관리 빈 생성</a></li>
+            <li><a href="${pageContext.request.contextPath}/ch12/createBeanByAnnotation">Annotation으로 관리 빈 생성</a></li>
             <li><a href="${pageContext.request.contextPath}/ch12/diByXml">XML 설정으로 관리빈의 의존성 주입</a></li>
+            <li><a href="${pageContext.request.contextPath}/ch12/diByAnnotation">Annotation으로 관리빈의 의존성 주입</a></li>
          </ul>
          </div>
        </div>

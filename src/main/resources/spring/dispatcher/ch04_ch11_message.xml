@@ -5,10 +5,12 @@
 	
 	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
 		<property name="basenames" > <!-- 메세지 파일이 여러개라면 name=basename's' -->
-		<list>
-			<value>message.ch04_error</value>
-			<value>message.ch11_internationalization</value>
-		</list>
+		
+			<!-- 새터 주입 한것임 -->
+			<list>
+				<value>message.ch04_error</value>
+				<value>message.ch11_internationalization</value>
+			</list>
 		</property>
 		
 	</bean>

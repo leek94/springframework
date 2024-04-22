@@ -10,11 +10,14 @@
 		<!-- setter 주입 -->
 		<property name="ch12Dao1" ref="ch12Dao1"></property>
 		<property name="ch12Dao2" ref="ch12Dao2"></property>
+		<!-- ref는 래퍼런스의 줄임말 -> ref가 있으면 이미 만들어져 있는 객체를 참조해서 값을 넣겠다는거 -->
+		<!-- ref가 없으면 ch12Dao1를 만들어서 바로 넣겠다는 뜻 -->
 	</bean>
 
 
 	<bean id="ch12Dao1"
 		class="com.mycompany.springframework.dao.Ch12Dao1" />
+		<!-- 여기서 생성된 객체가 ch12Dao1 세터에 매개값으로 들어감 -->
 
 	<bean id="ch12Dao2"
 		class="com.mycompany.springframework.dao.Ch12Dao2" />
@@ -27,5 +30,46 @@
 		<constructor-arg ref="ch12Dao1"></constructor-arg>
 		<constructor-arg ref="ch12Dao2"></constructor-arg>
 	</bean>
+	
+	
+	<!-- 관리 객체로 만들려면 여기에 bean으로 등록해야 함 -->
+	<bean id="ch12Service7"
+		class="com.mycompany.springframework.service.Ch12Service7">
+		<property name="list">
+			<list> 
+				<value>아이템1</value>
+				<value>아이템2</value>
+				<value>아이템3</value>
+			</list>
+		</property>
+	
+		<property name="set">
+			<set>
+				<value>아이템1</value>
+				<value>아이템2</value>
+				<ref bean="ch12Dao1"/>
+				<ref bean="ch12Dao2"/> <!-- 객체를 참조해서 넣고 싶을 경우  이런식으로 ref를 사용해서 넣어주면됨-->
+									   <!-- set이 Object 타입이므로 뭐든 들어 올 수 있음 -->
+			</set>
+		</property>
+		
+		<property name="map">
+			<map>
+				<entry key="key1" value="value1"/> <!-- valueRef를 사용해서 객체를 값에 넣을 수 있음 -->
+				<entry key="key2" value="value2"/>
+			</map>
+		</property>
+		
+		<property name="prop">
+			<props>
+				<prop key="key1">value1</prop>
+				<prop key="key2">value2</prop>
+				<prop key="key3">value3</prop>
+			</props>
+		
+		</property>
+		
+	</bean> 
+	
 			
 </beans>

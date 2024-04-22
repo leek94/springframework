@@ -37,9 +37,9 @@ diByXml<%@ page contentType="text/html; charset=UTF-8"%>
                <div class="col-md-8">
                   <!-- ###################################### -->
                   <div class="card">
-                     <div class="card-header">Spring 관리 빈 생성</div>
+                     <div class="card-header">spring 관리 빈 생성</div>
                      <div class="card-body">
-                        <p>spring/root/ch12_di_by_xml.xml 참조</p>
+                        <p>Ch12Service3.java, Ch12Service4.java 참조</p>
                      </div>
                   </div>
                   <!-- ###################################### -->
