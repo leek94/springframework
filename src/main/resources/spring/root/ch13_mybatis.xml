@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+   xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd
+      http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+   <!-- MyBatis가 사용할 DataSource 설정과 메퍼 XML 파일의 위치 설정-->
+   <bean id="sqlSessionFactory"
+        class="org.mybatis.spring.SqlSessionFactoryBean">
+      <property name="dataSource" ref="dataSource"/>     
+      <property name="configLocation" value="classpath:mybatis/mapper-config.xml"/>
+      <property name="mapperLocations" value="classpath:mybatis/mapper/*.xml"/>
+   </bean>
+   
+   <!-- MyBatis를 이용하는 DAO(Data Access Object)를 생성하고, 관리 객체로 생성 -->
+   <!-- 인터페이스는 자체적으로 객체를 생성 불가능하므로 마이바티스를 통해 인터페이스를 구현하는 관리 객체 자동 생성하기 -->
+   <!-- 마이바티스를 연결해놓을 경우 개발자는 인터페이스만 생성하면 마이바티스가 알아서 객체 만들어줌 -->
+   <mybatis-spring:scan
+      base-package="com.mycompany.springframework.dao.mybatis"
+      annotation="org.apache.ibatis.annotations.Mapper"/>
+   
+</beans>

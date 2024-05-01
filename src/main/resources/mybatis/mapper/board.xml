@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mycompany.springframework.dao.mybatis.Ch13BoardDao">
+
+	<!-- id 값이 인터페이스의 메소드 명으로 사용 되어야함 -->
+	<insert id="insert" parameterType="Ch13Board">
+		<selectKey keyProperty="bno" order="BEFORE" resultType="int">
+		 <!-- keyProperty는 밑의 SQL문에서 가져온 값을 어떤 필드에 넣을 거냐고 묻는 것 -->
+		 <!-- order는 순서를 정하는 것 BEFORE는  insert문 이전에 실행 AFTER는 이후에 실행 -->
+			select seq_bno.nextval from dual
+			<!-- bno를 받아와서 Ch13Board에 저장하면 #{bno}를 사용할 수 있다. -->
+			<!-- bno를 시퀀스로  이용해서 사용할 경우 값을 알 수가 없음  그래서 위에 처럼 sql문을 사용하고, keyProperty,order,resultType을 사용해야함-->
+		</selectKey>
+		insert into board(bno, btitle, bcontent, bdate, mid, bhitcount, 
+		battachoname, battachtype, battachdata
+		)
+		values(
+			#{bno}, #{btitle}, #{bcontent}, sysdate, #{mid}, 0,
+			#{battachoname},
+			#{battachtype},
+			#{battachdata}
+			<!-- jdbc 타입을 제공하지 않을 때 -->
+		)
+		<!-- 문자열의 경우 마이 바티스가 자동으로 ''을 넣어주므로 상관 할 필요 없음  -->
+		<!-- 숫자든 문자든 똑 같이 사용하면 됨 -->
+		<!-- #{필드}을 적으면 Ch13Board이 가지고 있는 내용이 자동적으로 들어옴 -->
+	</insert>
+	
+	<select id="count" resultType="int">
+		select count(*) from board
+	</select>
+	<select id="selectByPage" parameterType="Ch13Pager" resultType="Ch13Board">  <!-- 한 행에대한 resultType을 적어야함 -->
+		<![CDATA[
+		select rnum, bno, btitle, bcontent, mid, bdate, bhitcount
+			from (
+			    select rownum as rnum , bno, btitle, bcontent, mid, bdate, bhitcount
+			    from (
+			       select bno, btitle, bcontent, mid, bdate, bhitcount
+			       from board
+			       order by bno desc
+			    )
+			    where rownum <= #{endRowNo}
+			)
+			where rnum >= #{startRowNo}
+			]]>
+	</select>
+	
+	<select id="selectByBno" parameterType="int" resultType="Ch13Board">
+		select bno, btitle, bcontent, mid, bdate, bhitcount, battachoname, battachtype
+		from board
+		where bno=#{bno}
+	</select>
+	
+	<select id="selectAttributeData" parameterType="int" resultType="Ch13Board">
+		select battachdata from board where bno=#{bno}
+	</select>
+	
+	
+	<update id="update" parameterType="Ch13Board">
+		update board set 
+			btitle=#{btitle},
+			bcontent=#{bcontent}
+		<if test="battachoname != null">
+			,
+			battachoname=#{battachoname},
+			battachtype=#{battachtype},
+			battachdata=#{battachdata}
+		</if>
+		where bno=#{bno}
+	</update>
+	
+	<delete id="deleteByBno" parameterType="int">
+		delete from board where bno=#{bno}
+	</delete>
+	
+</mapper>
