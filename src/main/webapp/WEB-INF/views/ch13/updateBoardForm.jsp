@@ -1,4 +1,4 @@
-diByXml<%@ page contentType="text/html; charset=UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <!DOCTYPE html>
@@ -58,7 +58,7 @@ diByXml<%@ page contentType="text/html; charset=UTF-8"%>
 				         <div class="input-group mt-2">
 				            <div class="input-group-prepend"><span class="input-group-text">battach</span></div>
 				            <input id="battach" type="file" name="battach" class="form-control">
-				            <c:if test="${board.battachname != null}">
+				            <c:if test="${board.battachoname != null}">
 				            	<img src="attachDownload?bno=${board.bno}" width="150"/>
 				            </c:if>
 				         </div>

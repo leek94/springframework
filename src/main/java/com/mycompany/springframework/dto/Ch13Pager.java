@@ -29,8 +29,6 @@ public class Ch13Pager {
       													// 			 6 7 8 9 10
       													// rowsPerpage = 10 -> 1페이지에 10개의 값을 봄 / pagesPerGroup = 5 -> 1개의 그룹에 5개의 페이지가 있음
       													// totlaRows=10000개   / pageNo = 1 1페이지를 보겠다.
-      						
-
       totalPageNo = totalRows / rowsPerPage;
       if(totalRows % rowsPerPage != 0) totalPageNo++;
       // 10001일 경우 짜투리가 남으면  +1을 하면 페이지를 생성

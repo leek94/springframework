@@ -29,7 +29,8 @@
 	<select id="count" resultType="int">
 		select count(*) from board
 	</select>
-	<select id="selectByPage" parameterType="Ch13Pager" resultType="Ch13Board">  <!-- 한 행에대한 resultType을 적어야함 -->
+	<select id="selectByPage" parameterType="Ch13Pager" resultType="Ch13Board"> 
+	 <!-- 한 행에 대한 resultType을 적어야함 -->
 		<![CDATA[
 		select rnum, bno, btitle, bcontent, mid, bdate, bhitcount
 			from (
@@ -55,11 +56,11 @@
 		select battachdata from board where bno=#{bno}
 	</select>
 	
-	
 	<update id="update" parameterType="Ch13Board">
 		update board set 
 			btitle=#{btitle},
 			bcontent=#{bcontent}
+			<!-- battachoname이 null이면 값이 if문 값이 안들어가고 null이 아니면  if문 값들어감 -->
 		<if test="battachoname != null">
 			,
 			battachoname=#{battachoname},

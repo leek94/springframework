@@ -1,4 +1,4 @@
-diByXml<%@ page contentType="text/html; charset=UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <!DOCTYPE html>
@@ -39,30 +39,28 @@ diByXml<%@ page contentType="text/html; charset=UTF-8"%>
                   <div class="card">
                      <div class="card-header">게시물 쓰기</div>
                      <div class="card-body">
-                          <form id="updateBoardForm" method="post" action="updateBoard" enctype="multipart/form-data">
-                           <div class="input-group mt-2">
-                                 <div class="input-group-prepend"><span class="input-group-text">bno</span></div>
-                                 <input id="bno" type="text" name="bno" class="form-control" readonly value="${board.bno}"/>
-                              </div>
+                          <form id="writeBoardForm" method="post" action="writeBoard" enctype="multipart/form-data">
+                          <!--  form 제출시 updateBoard라는 url로 제출 enctype은 인코딩 유형을 말하고 multipart/form-data는 파일 업로드가 포함될 수 있다는 의미-->
+                          
                               <div class="input-group mt-2">
                                  <div class="input-group-prepend"><span class="input-group-text">btitle</span></div>
-                                 <input id="btitle" type="text" name="btitle" class="form-control" value="${board.btitle} ">
+                                 <input id="btitle" type="text" name="btitle" class="form-control">
                               </div>
                               
                               <div class="input-group mt-2">
                                  <div class="input-group-prepend"><span class="input-group-text">bcontent</span></div>
-                                 <textarea id="bcontent" name="bcontent" class="form-control">${board.bcontent}</textarea>
+                                 <textarea id="bcontent" name="bcontent" class="form-control"></textarea>
                               </div>
                              
                               
                               <div class="input-group mt-2">
                                  <div class="input-group-prepend"><span class="input-group-text">battach</span></div>
                                  <input id="battach" type="file" name="battach" class="form-control">
-                                 <img src="attachDownload?bno=${board.bno}" width="150"/>
+
                               </div>
                                  
                               <div class="mt-3">
-                                 <button type="submit" class="btn btn-info btn-sm me-2">수정</button>
+                                 <button type="submit" class="btn btn-info btn-sm me-2">글쓰기</button>
                                  <a class="btn btn-info btn-sm" href="boardList">목록보기</a>
                               </div>
                            </form>

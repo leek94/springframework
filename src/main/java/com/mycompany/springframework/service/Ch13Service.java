@@ -32,6 +32,7 @@ public class Ch13Service {
 		return boardList;
 		}
 	
+	//sql문으로 전체 행의 값을 받아와서 전달
 	public int getTotalRow() {
 		//비지니스 로직 자리..
 		int totalRows = boardDao.count();
